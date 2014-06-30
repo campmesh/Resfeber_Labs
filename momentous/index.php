@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--
+Template Name: Momentous
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>:: The Porter ::</title>
+<meta charset="utf-8">  
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+  <?php
+  $trackIDErr = $trackID = "";
+  ?>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <img src="images/demo/homepage/Porter1.png" alt="">
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="pages/about-us.html">About</a></li>
+        <li><a href="pages/solutions.html">Solutions</a></li>
+        <li><a href="#">Tie Up With Us</a></li>
+        <li><a href="#">Fares</a></li>
+        <li><a class = "drop" href="#">Track Order</a>
+          <ul>
+            <li><font size = "1"><a><div>Enter Waybill/Order Numbers. To track multiple orders, sperate numbers using space.</font></a></div></li>
+            <li>
+              <font size = "4">
+              <form  method="post" action="pages/check.php">
+                <input type="text" name="trackID" id="trackID" size="21" value="">
+                <span class="error"><?php echo $trackIDErr;?></span>
+              </font></form>
+            </li>
+            <li><div>
+            <font size = "1"><a>Please Select the type of Identification number:</a></div></font>
+            </li>
+            <li><form action="">
+              <span class="trackoption iblock">
+                                                    <span class="iblock">
+                                                        <input class="trackradio" type="radio" value="waybill" checked="true">
+                                                    </span>
+                                                    <span class="iblock">
+                                                        <span>Waybill Number</span>
+                                                    </span>
+                                                </span>
+                                                <span class="trackoption iblock"> 
+                                                    <span class="iblock">
+                                                         <input class="trackradio" type="radio" value="ref_ids">
+                                                    </span>
+                                                    <span class="iblock">
+                                                        <span>Order Number</span>
+                                                    </span>
+                                                </span>
+          </form></li>
+        </ul>
+        </li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ --> 
+  </header>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <div id="hp_intro" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="two_quarter first"><img src="images/demo/homepage/500x370.gif" alt=""></div>
+    <div class="one_quarter">
+      <article class="push50"><a href="#">
+        <div class="circle push15"><span class="icon-user"></span></div>
+        <h6 class="push10">BENEFIT FROM OUR NETWORK OF DRIVERS</h6>
+        <p class="nospace">Read more &raquo;</p>
+        </a></article>
+      <article><a href="#">
+        <div class="circle push15"><span class="icon-lightbulb"></span></div>
+        <h6 class="push10">DELIVERING SEAMLESS EXPERIENCE</h6>
+        <p class="nospace">Read more &raquo;</p>
+        </a></article>
+    </div>
+    <div class="one_quarter"><a href="#">
+      <article class="push50">
+      <div class="circle push15"><span class="icon-thumbs-up-alt"></span></div>
+      <h6 class="push10">FOCUS ON YOUR BUSINESS</h6>
+      <p class="nospace">Read more &raquo;</p>
+      </a>
+      </article>
+      <article><a href="#">
+        <div class="circle push15"><span class="icon-microphone"></span></div>
+        <h6 class="push10">ENABLE HIGHER CAPACITY UTILIZATION</h6>
+        <p class="nospace">Read more &raquo;</p>
+        </a></article>
+    </div>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main id="container" class="clear"> 
+    <!-- container body --> 
+    <!-- ########################################################################################## -->
+    <div class="two_third first">
+      <ul class="nospace">
+        <li class="clear borderedbox push30">
+          <div class="one_half nogutter first"><a href="#"><img src="images/demo/homepage/350x150.gif" alt=""></a></div>
+          <div class="one_half nogutter pad15">
+            <h6 class="push10">Blandit elementum</h6>
+            <p class="nospace push10">Integer imperdiet vestibulum leo ut tincidunt in sagittis.</p>
+            <p class="nospace right"><a href="#">Read more &raquo;</a></p>
+          </div>
+        </li>
+        <li class="clear borderedbox push30">
+          <div class="one_half nogutter first"><a href="#"><img src="images/demo/homepage/350x150.gif" alt=""></a></div>
+          <div class="one_half nogutter pad15">
+            <h6 class="push10">Blandit elementum</h6>
+            <p class="nospace push10">Integer imperdiet vestibulum leo ut tincidunt in sagittis.</p>
+            <p class="nospace right"><a href="#">Read more &raquo;</a></p>
+          </div>
+        </li>
+        <li class="clear borderedbox">
+          <div class="one_half nogutter first"><a href="#"><img src="images/demo/homepage/350x150.gif" alt=""></a></div>
+          <div class="one_half nogutter pad15">
+            <h6 class="push10">Blandit elementum</h6>
+            <p class="nospace push10">Integer imperdiet vestibulum leo ut tincidunt in sagittis.</p>
+            <p class="nospace right"><a href="#">Read more &raquo;</a></p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <article>
+        <div class="borderedbox pad5 push15"><img src="images/demo/homepage/500x370.gif" alt=""></div>
+        <h6>Lorem ipsum dolor</h6>
+        <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
+        <ul>
+          <li><a href="#">Lorem ipsum dolor sit</a></li>
+          <li>Etiam vel sapien et</li>
+        </ul>
+        <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
+        <p class="more"><a href="#">Continue Reading &raquo;</a></p>
+      </article>
+    </div>
+    <!-- ########################################################################################## --> 
+    <!-- / container body -->
+    <div class="clear"></div>
+  </main>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="title">RESFEBER LABS PVT LTD</h6>
+      <address class="push30">
+      201, <br>
+      Akhileshwar Apartments,<br>
+      Cross Nagardas Road,<br>
+      Andheri East - 400069,<br>
+      Mumbai.
+      </address>
+      <ul class="nospace">
+        <li class="push10"><span class="icon-time"></span> 24 X 7</li>
+        <li class="push10"><span class="icon-phone"></span> +91-8105851480</li>
+        <li><span class="icon-envelope-alt"></span> info@theporter.in</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="title">Legal</h6>
+      <ul class="nospace clear">
+        <li class="clear push30">
+          <div class="imgl"><img src="images/demo/80x80.gif" alt=""></div>
+          <p class="nospace push15">Privacy</p>
+          <p class="nospace"><a href="pages/privacy.html">Read more &raquo;</a></p>
+        </li>
+        <li class="clear">
+          <div class="imgl"><img src="images/demo/80x80.gif" alt=""></div>
+          <p class="nospace push15">Services</p>
+          <p class="nospace"><a href="pages/services.html">Read more &raquo;</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="title">Careers</h6>
+      <ul class="nospace clear ftgal">
+        <li class="one_third first"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third first"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ --> 
+  </footer>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">Resfeber Labs Pvt. Ltd.</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+</body>
+</html>
