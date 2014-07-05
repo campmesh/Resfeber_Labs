@@ -1,0 +1,292 @@
+<?php
+session_start();
+include("./include/website_config.php");//For Normal Login
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<title>:: Services ::</title>
+<meta charset="utf-8">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+  <?php
+    $trackIDErr = $trackID = "";
+  ?>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="fl_left">
+      <ul class="nospace">
+        <li><span class="icon-phone"></span> +918105851480</li>
+        <li><span class="icon-envelope-alt"></span> info@theporter.in</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="icon-facebook"></i></a></li>
+        <li><a class="faicon-pinterest" href="#"><i class="icon-pinterest"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="icon-twitter"></i></a></li>
+        <li><a class="faicon-dribble" href="#"><i class="icon-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="icon-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="icon-google-plus"></i></a></li>
+        <li><a class="faicon-skype" href="#"><i class="icon-skype"></i></a></li>
+        <li><a class="faicon-rss" href="#"><i class="icon-rss"></i></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <img src="images/demo/Porter1.png" alt="">
+    </div>
+    <nav id="mainav" class="fl_right">
+      <ul class="clear">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="about-us.php">About</a></li>
+        <li><a href="solutions.php">Solutions</a></li>
+        <li><a href="#">Fares</a></li>
+        <li><a class = "drop" href="#">Track Order</a>
+          <ul>
+            <li><font size = "1"><a><div>Enter Waybill/Order Numbers. To track multiple orders, sperate numbers using space.</font></a></div></li>
+            <li>
+              <font size = "4">
+              <form  method="post" action="check.php">
+                <input type="text" name="trackID" id="trackID" size="28" value="">
+                <span class="error"><?php echo $trackIDErr;?></span>
+              </font></form>
+            </li>
+            <li><div>
+            <font size = "1"><a>Please Select the type of Identification number:</a></div></font>
+            </li>
+            <li><form action="">
+              <span class="trackoption iblock">
+                <span class="iblock">
+                  <input class="trackradio" type="radio" name="order_type" value = "waybill">
+                </span>
+                <span class="iblock">
+                  <span><font size = "1">Waybill Number</font></span>
+                </span>
+              </span>
+              <span class="trackoption iblock"> 
+                <span class="iblock">
+                  <input class="trackradio" type="radio" name="order_type" value = "refs_no">
+                </span>
+                <span class="iblock">
+                  <span><font size = "1">Order Number</font></span>
+                </span>
+              </span>
+          </form></li>
+        </ul>
+        </li>
+        <?php
+        if(!$website->CheckLogin())
+    {
+    ?>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="register.php">SignUp</a></li>
+        <?php
+    }
+    else
+    {
+    ?>
+        <li><a href="./dashboard/login-home.php">My Dashboard</a></li>
+        <li><a href="logout.php">Logout</a></li>
+        <?php
+    }
+    ?>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ --> 
+  </header>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <main id="container" class="clear"> 
+    <!-- container body --> 
+    <!-- ########################################################################################## -->
+    <b><big><big><big>Terms &amp; Conditions for our Services:</big></big></big></b><br><br><br>
+    <p>The following Terms & Conditions shall apply to customers utilising the Services offered by the Company for the hiring of mini-trucks:</p> 
+    <p>The customer shall pay the fare (as agreed), parking charges, additional night surcharge (where applicable) and any fee or levy presently payable or hereinafter imposed by the law or required to be paid for availing of the mini-truck Services.
+    The customer agrees and accepts that the use of the Services provided by the Company is at the sole risk of the Customer, and further acknowledges that the Company disclaims all representations and warranties of any kind, whether express or implied.</p> 
+    <p>The customer shall ensure that he/she will not indulge in any of the following activities while availing the service:</p>
+    <ol type="i">
+      <li>Soiling or damaging the body and/or any other interiors of the mini-truck.</li>
+      <li>Misusing, soiling or damaging any of the devices (technical/non-technical) in the truck.</li>
+      <li>Asking the driver to break any Traffic/RTO/City Police and/or government rules for any purpose. The driver has the right to refuse such a request by the customer. The driver also has the right to refuse such a pick-up.</li>
+      <li>Pressurizing the driver to overload truck with the consignment than the allowed limit.</li>
+    </ol>
+    <p>The Customer shall indemnify Company from and against and in respect of any or all liabilities, losses, charges and expenses (including legal fees and costs on a full indemnity basis) claims, demands, actions and proceedings which Company may incur or sustain directly or indirectly from or by any reason of or in relation to the use or proposed use of the Services by the Customer and shall pay such sums on demand on the Company.<br>
+    The Company is hereby authorized to use the location based information provided by any of the telecommunication companies when the Customer uses the mobile phone to make a mini-truck booking. The location based information will be used only to facilitate and improve the probability of locating a mini-truck for the Customer.<br>
+    The Company shall be entitled to disclose to all companies within its group, or any government body as so required by the law or by directive or request from any government body, the particulars of the Customer in the possession of Company in any way as Company, in its absolute discretion, deems fit or if it considers it in its interests to do so.<br>
+    The Company shall be entitled at any time without giving any reason to terminate the booking of the truck done by the Customer.<br>
+    In case of lost items inside the Company during the journey, Company will try to locate the items on a "best-effort" basis but is not responsible for the same in case of loss or damage to the same.<br>
+    Any complaint in respect of the Services or the use of the mini-truck, the Customer has to inform Company of the same in writing within 24hours of using the mini-truck or the Services of Company.<br>
+    The Company shall not be liable for any conduct of the drivers of the mini-trucks. However, the Company encourgaes you to notify it of any complaints that you may have against the driver that you may have hired using the Company's Services.<br>
+    The Company shall be entitled to add to, vary or amend any or all these terms and conditions at any time and the Customer shall be bound by such addition, variation or amendment once such addition, variation or amendment are incorporated into these terms and conditions at Company's website at www.ThePorter.in.com on the date that Company may indicate that such addition, variation or amendment is to come into effect.<br>
+    All the calls made to the Company's call centre are recorded by the Company for quality and training purposes.<br>
+    All vehicles registered with the Company are continuously tracked using mobile technology for security reasons only. It is expressly made clear to you hereby that the Company does not own any mini-truck nor does it directly or indirectly employ any drivers for the vehicle. Mini-trucks and drivers are all supplied by third parties and the Company disclaims any and all liability in respect of the drivers and the mini-trucks alike.<br>
+    The Company have right to use the customer contact information for its own marketing purposes. The Company may send regular SMS updates to the mobile numbers registered with it.<br>
+    The courts of Mumbai, India shall have the sole and exclusive jurisdiction in respect of any matters arising from the use of the Services offered by Company or the agreement or arrangement between Company and the Customer.<br></p><p></p>
+    <ol>
+      <li>
+        <p><b>Your Acceptance of Our Terms &amp; Conditions</b></p>
+        <p>By giving us your consignment you accept our terms and conditions set out in the consignment note and/or the contract of carriage and/or the contract for the performance of other services on behalf of yourself and/or anyone else who has an interest in the consignment or the performance of other services irrespective of whether you have signed the front of our consignment note or not.  Our terms and conditions also cover and can be invoked by anyone we use or sub-contract to collect, transport, deliver your consignment or perform other services as well as our employees, directors and agents.  Only one of our authorised officers may agree to a variation of these terms and conditions in writing. When you give us the consignment with oral or written instructions that conflict with our terms and conditions we shall not be bound by such instructions.</p>
+        <li><p><b>Your Obligations</b></p>
+          <ol>
+        <li>You warrant, undertake and guarantee to us:</li>
+          <ol type = "a">
+            <li>the contents of the consignment (including but not limited to weight and number of items) have been properly described on our consignment note and that the Consignment Note is complete in all respects and the documents as required for the Tran consignment including invoice, permits are enclosed with  the Consignment Note;</li>
+            <li>that the contents of the Consignment are not Prohibited Items and/or are not restricted by the applicable regulations and that you will supply to us any Dangerous Goods declaration that is needed, properly and accurately in accordance with all applicable laws, rules and regulations and neither you nor the consignee is a person or organisation with whom we or you may not legally trade under any applicable laws or regulations;</li>
+            <li>that all statements and information and documents provided by you relating to the Consignment will be true and correct and you acknowledge that in the event that you make untrue or fraudulent statement about the Consignment or any of its contents, you would risk a civil claim and/or criminal prosecution the penalties for which may include forfeiture and sale. You agree to indemnify us and hold us harmless from any claims that may be brought against us or our agents arising from the information provided by you.</li>
+            <li>We are authorised to deliver the goods at the address mentioned on the Consignment Note and without prejudice to the foregoing it is expressly agreed that we shall be conclusively presumed to have delivered the goods in accordance with this contract. We will be sending the delivery confirmation by SMS/e-mails, no-response within 24 hours would be considered as an affirmative to the delivery.</li>
+            <li>you have declared the correct weight of the consignment and you will provide any special equipment we may need to load or unload the consignment on or off our vehicles;</li>
+            <li>when you have asked us to charge the receiver or a third party and the receiver or third party does not pay us you will promptly settle our invoice together with an administration fee in full within 7 days of us sending you the invoice;</li>
+            <li>all applicable laws and regulations have been complied with by you;</li>
+          </ol>
+        <li><p>You agree to indemnify us and hold us harmless from any liabilities we may suffer or any costs, damages or expenses, including legal costs, we incur either to you or to anyone else arising out of you being in breach of any of these warranties, representations and guarantees, even if we inadvertently accept a consignment that contravenes any of your obligations.</p>
+          <p>You certify that all statements and information you provide relating to the transportation of the consignment will be true and correct.   You acknowledge that in the event that you make untrue or fraudulent statements about the consignment or any of its contents you risk a civil claim and/or criminal prosecution the penalties for which include forfeiture and sale of your consignment.  To the extent that we may voluntarily assist you in completing the required customs and other formalities such assistance will be rendered at your sole risk.  You agree to indemnify us and hold us harmless from any claims that may be brought against us arising from the information you provide to us and any costs we will incur regarding this, and pay any administration fee we may charge you for providing the services described in this condition. <br>
+          The customer agrees and acknowledges that the use of the Services offered by Company is at the sole risk of the customer and that Company disclaims all representations and warranties of any kind, whether express or implied as to condition, suitability, quality, merchantability and fitness for any purposes are excluded to the fullest extent permitted by law.
+          Without prejudice to the above, the Company makes no representation or warranties that:</p></li>
+          <ol type = "a">
+            <li>the Services will meet the customer's requirements;</li>
+            <li>the Services will be uninterrupted, timely, secure, or error-free.</li>
+            <li>The Company shall not be responsible or liable for any loss or damage, howsoever caused or suffered by the Customer arising out of the use of truck service offered by Company or due to the failure of Company to provide Services to the Customer for any reason whatsoever including but not limited to the Customer's non-compliance with the Services' recorded voice instructions, malfunction, partial or total failure of any network terminal, data processing system, computer tele-transmission or telecommunications system or other circumstances whether or not beyond the control of Company or any person or any organization involved in the above mentioned systems.</li>
+            <li>The Company will not be liable for any damages of any kind arising from the use of the Service offered by the Company, including, but not limited to direct, indirect, incidental, punitive, and consequential damages.</li>
+            <li>There shall be extra charges for far off locations & toll charges as well.</li>
+            <li>The customer shall make an alternate arrangement if the mini-truck has not reached due to any reason.
+            We are not liable if we do not fulfill any obligations towards you at all as a result of:</li>   
+            <ol type = "i">
+              <li>circumstances beyond our control such as (but not limited to):</li>
+              <ul>
+                <li>acts of god including earthquakes, cyclones, storms, flooding, fire, disease, fog, snow or frost or other natural calamities or disasters;</li>
+                <li>force majeure including (but not limited to) war, accidents, acts of public enemies, strikes, embargoes, perils of the air, local disputes or civil commotions;</li>
+                <li>national or local disruptions in air or ground transportation networks and mechanical problems to modes of transport or machinery;</li>
+                <li>latent defects or inherent vice in the contents of the consignment;</li>
+                <li>criminal acts of third parties such as theft and arson.</li>
+              </ul>
+              <li>your acts or omissions or those of third parties such as:</li>
+              <ul><li>you being in breach of (or any other party claiming an interest in the consignment causing you to breach) your obligations under these terms and conditions </li></ul>
+              <li>The contents of the consignment consisting of any article that is a prohibited item even though we may have accepted the consignment by mistake.</li>
+            </ol> 
+          </ol>
+        </ol>
+          <li>Dangerous Good(s)/Security</li>
+          <ol><li>Dangerous Goods</li><ul><li>Except in the circumstances shown in paragraph 5.1 (b) below we do not carry, nor perform other services regarding, goods which are in our sole opinion Dangerous Goods including, but not limited to, those specified in the regulations, guidelines, technical instructions, codes applicable to us and our business or to the transport of, or the performance of other services regarding, Dangerous Goods.</li>
+            <li>We may at our discretion accept some Dangerous Goods for carriage, or for the performance of other services, in some locations if you have been accorded the status of an approved customer and this must be given by us in writing before your consignment can be accepted.  Your Dangerous Goods will only be accepted if they comply with the applicable regulations and our requirements. Details of our requirements together with the procedure for applying for approved customer status are available from our nearest office and a dangerous goods surcharge will be invoiced to you upon acceptance of your consignment.</li></ul>
+            <li>Prohibited Items</li>
+            <p>We do not accept consignments that contain prohibited items.</p>
+            <li>We accept consignments only upon your declaration of the type and value of the consignment (“said to contain” basis). We have no responsibility whatsoever as to the correctness of description, type or value thereof and you agree to indemnify us and hold us harmless from any claims that may be brought against us arising out of or relating to such declaration provided by you and any costs we will incur relating thereto.</li></ol>
+      <li>Rejected Consignment(s)</li>
+      <p>If the receiver refuses to accept delivery we will try to contact you and agree the appropriate next action.  You agree to pay us any costs we incur in forwarding, disposing of or returning the consignment and our charges (if any) for the agreed appropriate next action</p>
+      <li>Claims brought by Third Parties</li>
+      <p>You undertake to us that you shall not permit any other person who has an interest in the consignment to bring a claim or action against us arising out of Carriage even though we may have been negligent or in default and if a claim or action is made you will indemnify us against the consequences of the claim or action and the costs and expenses we incur in defending it.<br>
+      The above mentioned terms and conditions of use and/or Agreement and the Privacy Policy constitute the entire agreement between the User(s) and THEPORTER with respect to access to and use of the web site and the Services offerred by THEPORTER, superseding any prior written or oral agreements in relation to the same subject matter herein.</p>
+      <li>Disclaimer</li>
+      <p>The information contained in this website is for general information purposes only. The information is provided by ThePorter and while we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+      <p>In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+      <p>hrough this website you are able to link to other websites which are not under the control of ThePorter. We have no control over the nature, content and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+      <p>Every effort is made to keep the website up and running smoothly. However, ThePorter takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+      <li>Privacy Policy</li>
+      <p>This privacy policy sets out how ThePorter uses and protects any information that you give ThePorter when you use this website.<br>
+        ThePorter is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.<br>
+      ThePorter may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from 23rd February 2014.</p>
+    <p><b>What we collect</b></p>
+    <p><ul><li>name and job title</li>
+        <li>contact information including email address</li>
+        <li>demographic information such as postcode, preferences and interests</li>
+        <li>other information relevant to customer surveys and/or offers</li></ul></p>
+    <p><b>What we do with the information we gather</b></p>
+    <p>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons: </p>
+    <p><b>Internal record keeping</b></p>
+    <p>We may use the information to improve our products and services.<br>
+    We may periodically send promotional emails about new products, special offers or other information which we think you may find interesting using the email address which you have provided.<br>
+    From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail. We may use the information to customize the website according to your interests.</p>
+    <p><b>Security</b></p>
+    <p>We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.</p>
+    <p><b>How we use cookies</b></p>
+    <p>A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, likes and dislikes by gathering and remembering information about your preferences.</p>
+    <p>We use traffic log cookies to identify which pages are being used. This helps us analyze data about webpage traffic and improve our website in order to tailor it to customer needs. We only use this information for statistical analysis purposes and then the data is removed from the system.</p>
+    <p>Overall, cookies help us provide you with a better website, by enabling us to monitor which pages you find useful and which you do not. A cookie in no way gives us access to your computer or any information about you, other than the data you choose to share with us.</p>
+    <p>You can choose to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. This may prevent you from taking full advantage of the website.</p>
+    <p><b>Links to other websites</b></p>
+    <p>Our website may contain links to other websites of interest. However, once you have used these links to leave our site, you should note that we do not have any control over that other website. Therefore, we cannot be responsible for the protection and privacy of any information which you provide whilst visiting such sites and such sites are not governed by this privacy statement. You should exercise caution and look at the privacy statement applicable to the website in question.</p>
+    <p>We will not sell, distribute or lease your personal information to third parties unless we have your permission or are required by law to do so. We may use your personal information to send you promotional information about third parties which we think you may find interesting if you tell us that you wish this to happen.</p>
+    <p>You may request details of personal information which we hold about you under the Data Protection Act 1998. A small fee will be payable. If you would like a copy of the information held on you please write to support@ThePorter.in .</p>
+    <p>If you believe that any information we are holding on you is incorrect or incomplete, please write to or email us as soon as possible, at the above address. We will promptly correct any information found to be incorrect.</p>
+    <p><b>Contact Us</b></p>
+    <p>If there are any questions regarding this privacy policy you may contact us using the information on the Contact Us page.</p>
+  </ol>
+<hr />
+<div class="wrapper row4">
+  <footer id="footer" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div class="one_third first">
+      <h6 class="title">RESFEBER LABS PVT LTD</h6>
+      <address class="push30">
+      201, <br>
+      Akhileshwar Apartments,<br>
+      Cross Nagardas Road,<br>
+      Andheri East - 400069,<br>
+      Mumbai.
+      </address>
+      <ul class="nospace">
+        <li class="push10"><span class="icon-time"></span> 24 X 7</li>
+        <li class="push10"><span class="icon-phone"></span> +91-8105851480</li>
+        <li><span class="icon-envelope-alt"></span> info@theporter.in</li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="title">Legal</h6>
+      <ul class="nospace clear">
+        <li class="clear push30">
+          <div class="imgl"><img src="images/demo/80x80.gif" alt=""></div>
+          <p class="nospace push15">Privacy</p>
+          <p class="nospace"><a href="privacy.php">Read more &raquo;</a></p>
+        </li>
+        <li class="clear">
+          <div class="imgl"><img src="images/demo/80x80.gif" alt=""></div>
+          <p class="nospace push15">Services.</p>
+          <p class="nospace"><a href="#">Read more &raquo;</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="title">Careers</h6>
+      <ul class="nospace clear ftgal">
+        <li class="one_third first"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third first"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+        <li class="one_third"><a href="#"><img src="images/demo/100x100.gif" alt=""></a></li>
+      </ul>
+    </div>
+    <!-- ################################################################################################ --> 
+  </footer>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2014 - All Rights Reserved - <a href="#">ThePorter.in</a></p>
+    <p class="fl_right">Developed by <a target="_blank" href="http://www.theporter.in/" title="Website Templates">ThePorter.in</a></p>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+</body>
+</html>
