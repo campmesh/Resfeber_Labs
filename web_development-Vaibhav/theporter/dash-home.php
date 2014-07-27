@@ -25,22 +25,8 @@ while($row = mysqli_fetch_assoc($resource)){
   <link href="styles.css" rel="stylesheet" type="text/css" />
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
-         span{height:40px; width:40px; display:block; position:relative;} 
-
-.demoSpan1{height:8px; width:8px; display:block; border:1px solid #333; border-radius:25px;-webkit-border-radius:25px;-moz-border-radius:25px; top: 15px; right: 20px;}
-
-.demoSpan1:after{content:''; height:4px; width:4px; display:block; background:#333; border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px; position:relative
-; top:2px; left:2px;}
         body { font-family:Helvetica, Sans-Serif; font-size:0.8em;}
-        #report { border-collapse:collapse;}
-        #report h4 { margin:0px; padding:0px;}
-        #report img { float:right;}
-        #report ul { margin:10px 0 10px 40px; padding:0px;}
-        #report th { repeat-x scroll center left; color:#000; padding:15px 15px; text-align:left;}
         #report td { background:#f7f7f7 none repeat-x scroll center left; color:#000; padding:7px 15px; }
-        #report tr.odd td { background:#fff repeat-x scroll center left; cursor:pointer; }
-        #report div.arrow { background:transparent url(arrows.png) no-repeat scroll 0px -16px; width:16px; height:16px; display:block;}
-        #report div.up { background-position:0px 0px;}
     </style>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
@@ -151,16 +137,23 @@ function updateFeed(){
   </div> 
     <!-- ########################################################################################## -->
     <div class="sidebar one_quarter1 first"> 
-      <!-- #####################
-##################################################################### -->
+      <!-- ########################################################################################## -->
       <nav class="sdb_holder">
         <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Vehicles</a>
-          <li><a href="#">Billing</a>
-          <li><a href="#">Activity History</a></li>
-          <li><a href="#">Account Settings</a>
+          <li><a href="login-home.php">Dashboard</a>
+            <ul>
+              <li><a href="login-home.php">My Account</a></li>
+              <li><a href="place_order.php">Place Order</a></li>
+              <li><a href="#">Transactions</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Addresses</a>
+            <ul>
+               <li><a href="add-addresses.php">Add Address</a></li>
+              <li><a href="addresses_list.php">Address List</a></li>
+            </ul>          
+          </li>
+          <li><a href="../account_settings.php">Account Settings</a></li>
         </ul>
       </nav>
     </div>
