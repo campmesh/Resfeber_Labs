@@ -260,14 +260,11 @@ include("./include/website_config.php");//For Normal Login
 jQuery(function ($) {
     $.supersized({
         slides: [{
-            image: 'images/demo/slider/1.png',
-            title: 'Overlay text for image 1<br><small>smaller subline text</small>'
+            image: 'images/demo/slider/Banner 1-01.jpg'
         }, {
-            image: 'images/demo/slider/2.png',
-            title: 'Overlay text for image 2'
+            image: 'images/demo/slider/Banner 1-02.jpg'
         }, {
-            image: 'images/demo/slider/3.png',
-            title: 'Overlay text for image 3'
+            image: 'images/demo/slider/Banner 1-03.jpg'
         }]
     });
 });
